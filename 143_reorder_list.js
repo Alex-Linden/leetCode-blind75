@@ -40,10 +40,15 @@ function reverseLL(head) {
 }
 
 function reorder(list1, list2) {
-  while (list2) {
-    let tmp = list2.next;
-    list2.next = list1.next;
-    list1.next = list2;
-    list2 = tmp;
+  let [first, next, second] = [list1, null, list2];
+
+  while (second.next) {
+    next = first.next;
+    first.next = second;
+    first = next;
+
+    next = second.next;
+    second.next = first;
+    second = next;
   }
 }
