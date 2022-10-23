@@ -41,6 +41,15 @@ elements.
 So, the output is -1."""
 
 def find_twins(arr):
+    """ return lowest num that is not a twin or -1
+
+    >>> find_twins([1,1,2,2])
+    -1
+
+    >>> find_twins([1,1,2,3,3,4,4])
+    2
+    """
+
     arr.sort()
 
     i = 0
