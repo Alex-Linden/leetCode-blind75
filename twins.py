@@ -39,3 +39,16 @@ Explanation:
 Given array of element contain all the twin
 elements.
 So, the output is -1."""
+
+def find_twins(arr):
+    arr.sort()
+
+    i = 0
+
+    while i < len(arr):
+        if arr[i] == arr[i + 1]:
+            i += 2
+        else:
+            return arr[i]
+
+    return -1
