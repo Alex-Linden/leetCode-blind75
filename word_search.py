@@ -40,3 +40,28 @@ first row, "TOM" is found at last column,
 So, the output is ["Yes", "Yes", "Yes" "No"].
 """
 
+def word_search(grid, words):
+
+
+
+
+def has_word(grid, word, position):
+    x, y = position
+    i = 0
+
+    while x < len(word) + x and x < len(grid[0]):
+
+
+        if not grid[x][y] == word[i]:
+            return False
+
+        x += 1
+        i += 1
+
+    while y < len(word) + y and :
+
+
+
+
+
+    return False
