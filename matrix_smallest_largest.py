@@ -32,4 +32,33 @@ row and smallest in its column.
 So, the output is 2."""
 
 
+def smallest_largest(grid):
+    """
+    >>> smallest_largest([[1, 2], [3, 4]])
+    [2]
+     """
+    smallest_per_col = [None] * len(grid[0])
 
+    res = []
+
+    for row in grid:
+        largest = row[0]
+        i_of_lrg = 0
+
+        for i in range(len(row)):
+            if largest < row[i]:
+                largest = row[i]
+                i_of_lrg = i
+
+        if (smallest_per_col[i_of_lrg] is not None and
+                largest == smallest_per_col[i_of_lrg]):
+            res.append(largest)
+        elif smallest_per_col[i_of_lrg] is None:
+            smallest = largest
+            for j in range(len(grid)):
+                smallest = min(smallest, grid[j][i_of_lrg])
+            smallest_per_col[i_of_lrg] = smallest
+            if smallest == largest:
+                res.append(largest)
+
+    return res
